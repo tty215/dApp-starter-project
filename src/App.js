@@ -225,7 +225,7 @@ const App = () => {
         )}
         {/* waveボタンにwave関数を連動 */}
         {currentAccount && (
-          <button className="waveButton" onClick={wave}>
+          <button className="waveButton" onClick={wave} disabled={messageValue === ''}>
             Wave at Me
           </button>
         )}
@@ -236,7 +236,9 @@ const App = () => {
             placeholder="メッセージはこちら"
             type="text"
             id="message"
+            style={{ marginTop: '2rem', }}
             value={messageValue}
+            rows="4"
             onChange={(e) => setMessageValue(e.target.value)}
           />
         )}
